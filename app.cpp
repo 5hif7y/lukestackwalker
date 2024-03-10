@@ -762,6 +762,9 @@ void StackWalkerMainWnd::OnCopyFunctionDetails(wxCommandEvent&) {
   if (m_sourceEdit->HasFocus()) {
     toClipBoard = m_sourceEdit->GetSelectedText();
   }
+  if (m_assemblyEdit->HasFocus()) {
+    toClipBoard = m_assemblyEdit->GetSelectedText();
+  }
   if (toClipBoard.empty()) {
     toClipBoard = m_currentFunctionModule + " " + m_currentSourceFile + " " + m_currentFunction;
   }
